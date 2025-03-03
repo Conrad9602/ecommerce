@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.Objects;
 
+@CrossOrigin(origins = "http://localhost:8081") // Allow Vue frontend
 @RestController
 @RequestMapping("/category")
 
