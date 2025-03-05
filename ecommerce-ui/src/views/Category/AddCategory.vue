@@ -62,9 +62,9 @@
         }
   
         const newCategory = {
-          categoryName: this.categoryName,
-          description: this.description,
-          imageUrl: this.imageURL, // Ensure it matches backend field
+            categoryName: this.categoryName,
+            description: this.description,
+            imageUrl: this.imageURL, // Ensure it matches backend field
         };
   
         const baseURL = "http://localhost:8080/";
@@ -80,9 +80,9 @@
             console.log("✅ API Response:", response.data);
 
             swal({
-            text: "Category Added Successfully!",
-            icon: "success",
-            closeOnClickOutside: false,
+                text: "Category Added Successfully!",
+                icon: "success",
+                closeOnClickOutside: false,
             });
 
             this.categoryName = "";
@@ -93,24 +93,24 @@
             console.error("❌ API Error:", error);
 
             if (error.response) {
-            console.error("❌ Backend Response:", error.response.data);
-            swal({
-                text: "Failed to add category! Error: " + (error.response.data.message || "Unknown error"),
-                icon: "error",
-            });
+                console.error("❌ Backend Response:", error.response.data);
+                swal({
+                    text: "Failed to add category! Error: " + (error.response.data.message || "Unknown error"),
+                    icon: "error",
+                });
             } else if (error.request) {
-            console.error("❌ No response from server. Possible CORS issue or server is down.");
-            console.error("🔹 Axios Error Details:", error.toJSON());
-            swal({
-                text: "No response from server! Check if backend is running.",
-                icon: "error",
-            });
+                console.error("❌ No response from server. Possible CORS issue or server is down.");
+                console.error("🔹 Axios Error Details:", error.toJSON());
+                swal({
+                    text: "No response from server! Check if backend is running.",
+                    icon: "error",
+                });
             } else {
-            console.error("❌ Unexpected Error:", error.message);
-            swal({
-                text: "Unexpected Error: " + error.message,
-                icon: "error",
-            });
+                console.error("❌ Unexpected Error:", error.message);
+                swal({
+                    text: "Unexpected Error: " + error.message,
+                    icon: "error",
+                });
             }
         }
         }

@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.Optional;
 
+@CrossOrigin(origins = "http://localhost:8081") // Allow Vue frontend
 @RestController
 @RequestMapping("/product")
 public class ProductController {

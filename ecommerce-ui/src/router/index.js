@@ -1,13 +1,17 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
-import AddCategory from "../views/Category/AddCategory";
-import Category from "../views/Category/Category";
+import AddCategory from "../views/Category/AddCategory.vue";
+import Category from "../views/Category/Category.vue";
 
 const routes = [
   {
     path: '/',
     name: 'home',
-    component: HomeView
+    component: HomeView,
+    beforeEnter: (to, from, next) => {
+      console.log("Entering Home route");
+      next();
+    }
   },
   {
     path: '/about',
@@ -26,6 +30,10 @@ const routes = [
     path: "/admin/category",
     name: "AdminCategory",
     component: Category,
+    beforeEnter: (to, from, next) => {
+      console.log("Entering AdminCategory route");
+      next();
+    }
   },
 ]
 

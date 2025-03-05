@@ -25,19 +25,24 @@
     components : {CategoryBox},
     data() {
       return {
-        baseURL : "https://limitless-lake-55070.herokuapp.com/",
+        baseURL : "http://localhost:8080/",
         categories : null,
       }
     },
     methods: {
       async getCategories() {
+        console.log("Fetching categories...");
         //fetch categories
         await axios.get(this.baseURL + "category/")
-        .then(res => this.categories = res.data)
+        .then(res => {
+          console.log("Categories fetched:", res.data);
+          this.categories = res.data
+        })
         .catch(err => console.log(err))
       }
     },
     mounted(){
+      console.log("Category component mounted");
       this.getCategories();
     }
   }
